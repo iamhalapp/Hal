@@ -271,7 +271,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         // reposition encouragement label
         //news.center = CGPoint(x: view.frame.width/2,y: -173+view.frame.height/2);
-        news.text = "Your heart rate has been steady for the past 48 hours, maybe time for a run?"
+        news.text = "Your heart rate has been stable for the past 48 hours, maybe time for a run?"
         
         // clean past data (debug)
         (UIApplication.shared.delegate as! AppDelegate).deleteSamplesData()
@@ -312,7 +312,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         } catch { print ("error loading data") }
  */
         
-        //
         let sampleDate:String = results[0].time
         current.text = sampleDate + "\n" + String (describing: results[0].value) + " mg/DL " + results[0].trend
         
