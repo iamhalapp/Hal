@@ -1,0 +1,6 @@
+framework module Pods_HalTests {
+  umbrella header "Pods-HalTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

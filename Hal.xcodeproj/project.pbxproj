@@ -1,0 +1,1505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0407A58D1F630FBD006B01E5 /* hamburger.json in Resources */ = {isa = PBXBuildFile; fileRef = 0407A58C1F630FBD006B01E5 /* hamburger.json */; };
+		0407A58F1F639DAB006B01E5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0407A58E1F639DAB006B01E5 /* data.json */; };
+		0407A5911F63A92D006B01E5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A5901F63A92D006B01E5 /* SettingsController.swift */; };
+		0407A5931F65B4E9006B01E5 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A5921F65B4E9006B01E5 /* SegueFromLeft.swift */; };
+		041074721F76263200C86F13 /* DexcomBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041074711F76263200C86F13 /* DexcomBridge.swift */; };
+		0427012A1F1EC85200133257 /* GlucoseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042701291F1EC85200133257 /* GlucoseSample.swift */; };
+		042FD2E61F2498AC00A6DF49 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FD2E51F2498AB00A6DF49 /* Utils.swift */; };
+		042FD2EA1F2696AD00A6DF49 /* ChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FD2E91F2696AD00A6DF49 /* ChartManager.swift */; };
+		043701F81F396713001EF6E7 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043701F71F396713001EF6E7 /* Background.swift */; };
+		043702641F4A6817001EF6E7 /* preloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 043702631F4A6816001EF6E7 /* preloader.json */; };
+		0437028C1F4BDC97001EF6E7 /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0437028B1F4BDC97001EF6E7 /* heart.json */; };
+		0437028F1F4BDE4B001EF6E7 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 0437028E1F4BDE4B001EF6E7 /* loader.json */; };
+		043702911F4C0547001EF6E7 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 043702901F4C0547001EF6E7 /* AppIcon.appiconset */; };
+		043702931F4D41A1001EF6E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043702921F4D41A1001EF6E7 /* LoginViewController.swift */; };
+		043702951F4E49BF001EF6E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043702941F4E49BF001EF6E7 /* CoreData.framework */; };
+		04471C9E1F181AB900F1023A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04471C9D1F181AB900F1023A /* UserNotifications.framework */; };
+		04471CA01F18982200F1023A /* HealthKitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04471C9F1F18982200F1023A /* HealthKitBridge.swift */; };
+		04471CA21F1898DD00F1023A /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04471CA11F1898DD00F1023A /* Math.swift */; };
+		04471CA41F18A29000F1023A /* EventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04471CA31F18A29000F1023A /* EventDispatcher.swift */; };
+		044734F11F54D6DE00C85608 /* bouncing_heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 044734F01F54D6DE00C85608 /* bouncing_heart.json */; };
+		044734F41F553E4100C85608 /* morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044734F31F553E4000C85608 /* morning.jpg */; };
+		044734F61F577EA400C85608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044734F51F577EA300C85608 /* Report.swift */; };
+		044734FB1F57DDAA00C85608 /* AnimatedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044734FA1F57DDAA00C85608 /* AnimatedBackground.swift */; };
+		044CEDE21F169E4E005CBD0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEDE11F169E4E005CBD0E /* AppDelegate.swift */; };
+		044CEDE41F169E4E005CBD0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEDE31F169E4E005CBD0E /* ViewController.swift */; };
+		044CEDE71F169E4E005CBD0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CEDE51F169E4E005CBD0E /* Main.storyboard */; };
+		044CEDEA1F169E4E005CBD0E /* Beacon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 044CEDE81F169E4E005CBD0E /* Beacon.xcdatamodeld */; };
+		044CEDEC1F169E4E005CBD0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044CEDEB1F169E4E005CBD0E /* Assets.xcassets */; };
+		044CEDEF1F169E4E005CBD0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CEDED1F169E4E005CBD0E /* LaunchScreen.storyboard */; };
+		044CEDFA1F169E4F005CBD0E /* BeaconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEDF91F169E4F005CBD0E /* BeaconTests.swift */; };
+		044CEE051F169E4F005CBD0E /* BeaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEE041F169E4F005CBD0E /* BeaconUITests.swift */; };
+		044CEE181F16C32D005CBD0E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CEE161F16C32D005CBD0E /* Interface.storyboard */; };
+		044CEE1A1F16C32D005CBD0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044CEE191F16C32D005CBD0E /* Assets.xcassets */; };
+		044CEE211F16C32D005CBD0E /* Scout Watch App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 044CEE201F16C32D005CBD0E /* Scout Watch App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		044CEE281F16C32D005CBD0E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEE271F16C32D005CBD0E /* InterfaceController.swift */; };
+		044CEE2A1F16C32D005CBD0E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEE291F16C32D005CBD0E /* ExtensionDelegate.swift */; };
+		044CEE2C1F16C32D005CBD0E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEE2B1F16C32D005CBD0E /* NotificationController.swift */; };
+		044CEE2E1F16C32D005CBD0E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEE2D1F16C32D005CBD0E /* ComplicationController.swift */; };
+		044CEE301F16C32D005CBD0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044CEE2F1F16C32D005CBD0E /* Assets.xcassets */; };
+		044CEE341F16C32D005CBD0E /* Scout Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 044CEE141F16C32D005CBD0E /* Scout Watch App.app */; };
+		044CEE481F16E132005CBD0E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044CEE471F16E132005CBD0E /* HealthKit.framework */; };
+		044CEE4A1F16E51D005CBD0E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044CEE491F16E51D005CBD0E /* HealthKit.framework */; };
+		045A15381F4EA82400FDEBFC /* night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045A15371F4EA82400FDEBFC /* night.jpg */; };
+		0474950C1F5919BC00841A31 /* sea.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0474950B1F5919A600841A31 /* sea.mp4 */; };
+		047495121F5A6A5A00841A31 /* DailySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047495111F5A6A5A00841A31 /* DailySummary.swift */; };
+		049A2AC51F86C1B3002DDF00 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A2AC41F86C1B3002DDF00 /* CollectionViewCell.swift */; };
+		049A2AC81F86CC9C002DDF00 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A2AC71F86CC9C002DDF00 /* Summary.swift */; };
+		049A2ACA1F89DCF0002DDF00 /* StatSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A2AC91F89DCF0002DDF00 /* StatSummary.swift */; };
+		04B972341F587F9C00F9512E /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B972331F587F9C00F9512E /* KeychainSwiftDistrib.swift */; };
+		04DDBA571F5D0C0800A7D4BC /* evening.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DDBA561F5D0C0800A7D4BC /* evening.jpg */; };
+		04DDBA5D1F5E1AE000A7D4BC /* noon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DDBA5C1F5E1AE000A7D4BC /* noon.jpg */; };
+		1D337F7D72CDAE0981BF07E7 /* Pods_Hal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081DA0442CCF7D4B5B5F4116 /* Pods_Hal.framework */; };
+		2B0AA8D9C732954C58FA927E /* Pods_Scout_Watch_App_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDEACB6BD41319B81901B41 /* Pods_Scout_Watch_App_Extension.framework */; };
+		7C03CECB3914D0E857DFC9AE /* Pods_HalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6318519DAEE61CA65D8AA72 /* Pods_HalUITests.framework */; };
+		871E80229D9C1DAC60C0A4A8 /* Pods_HalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCD4EB9A0D170E8D46E3B90 /* Pods_HalTests.framework */; };
+		CDBBB1DE971C116BC8ABAAB6 /* Pods_Scout_Watch_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8293F677F3C7D1EBB8B812 /* Pods_Scout_Watch_App.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		044CEDF61F169E4F005CBD0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 044CEDD61F169E4E005CBD0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 044CEDDD1F169E4E005CBD0E;
+			remoteInfo = Beacon;
+		};
+		044CEE011F169E4F005CBD0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 044CEDD61F169E4E005CBD0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 044CEDDD1F169E4E005CBD0E;
+			remoteInfo = Beacon;
+		};
+		044CEE221F16C32D005CBD0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 044CEDD61F169E4E005CBD0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 044CEE1F1F16C32D005CBD0E;
+			remoteInfo = "Scout Watch App Extension";
+		};
+		044CEE321F16C32D005CBD0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 044CEDD61F169E4E005CBD0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 044CEE131F16C32D005CBD0E;
+			remoteInfo = "Scout Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		043702581F49F6CC001EF6E7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEE381F16C32D005CBD0E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				044CEE211F16C32D005CBD0E /* Scout Watch App Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEE3C1F16C32D005CBD0E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				044CEE341F16C32D005CBD0E /* Scout Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D86E81F20FD1E000BC423 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0407A58C1F630FBD006B01E5 /* hamburger.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hamburger.json; sourceTree = "<group>"; };
+		0407A58E1F639DAB006B01E5 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		0407A5901F63A92D006B01E5 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		0407A5921F65B4E9006B01E5 /* SegueFromLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
+		041074711F76263200C86F13 /* DexcomBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomBridge.swift; sourceTree = "<group>"; };
+		042701291F1EC85200133257 /* GlucoseSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseSample.swift; sourceTree = "<group>"; };
+		042FD2E51F2498AB00A6DF49 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils.swift; sourceTree = "<group>"; };
+		042FD2E91F2696AD00A6DF49 /* ChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartManager.swift; sourceTree = "<group>"; };
+		043701F71F396713001EF6E7 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = ../Background.swift; sourceTree = "<group>"; };
+		043702561F49F6BB001EF6E7 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = ../Phoenix/Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
+		0437025A1F4A4650001EF6E7 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
+		043702631F4A6816001EF6E7 /* preloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = preloader.json; path = ../../../Downloads/preloader.json; sourceTree = "<group>"; };
+		0437028B1F4BDC97001EF6E7 /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = heart.json; path = ../../../Downloads/heart.json; sourceTree = "<group>"; };
+		0437028E1F4BDE4B001EF6E7 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loader.json; path = ../../../Downloads/loader.json; sourceTree = "<group>"; };
+		043702901F4C0547001EF6E7 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		043702921F4D41A1001EF6E7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		043702941F4E49BF001EF6E7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04471C9D1F181AB900F1023A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		04471C9F1F18982200F1023A /* HealthKitBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitBridge.swift; sourceTree = "<group>"; };
+		04471CA11F1898DD00F1023A /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		04471CA31F18A29000F1023A /* EventDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDispatcher.swift; sourceTree = "<group>"; };
+		04471CA51F1ABC1D00F1023A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		044734F01F54D6DE00C85608 /* bouncing_heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bouncing_heart.json; sourceTree = "<group>"; };
+		044734F31F553E4000C85608 /* morning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morning.jpg; sourceTree = "<group>"; };
+		044734F51F577EA300C85608 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		044734FA1F57DDAA00C85608 /* AnimatedBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedBackground.swift; sourceTree = "<group>"; };
+		044CEDDE1F169E4E005CBD0E /* Hal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		044CEDE11F169E4E005CBD0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		044CEDE31F169E4E005CBD0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		044CEDE61F169E4E005CBD0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		044CEDE91F169E4E005CBD0E /* Beacon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Beacon.xcdatamodel; sourceTree = "<group>"; };
+		044CEDEB1F169E4E005CBD0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		044CEDEE1F169E4E005CBD0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		044CEDF01F169E4E005CBD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044CEDF51F169E4E005CBD0E /* HalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		044CEDF91F169E4F005CBD0E /* BeaconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTests.swift; sourceTree = "<group>"; };
+		044CEDFB1F169E4F005CBD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044CEE001F169E4F005CBD0E /* HalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		044CEE041F169E4F005CBD0E /* BeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconUITests.swift; sourceTree = "<group>"; };
+		044CEE061F169E4F005CBD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044CEE141F16C32D005CBD0E /* Scout Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scout Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		044CEE171F16C32D005CBD0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		044CEE191F16C32D005CBD0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		044CEE1B1F16C32D005CBD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044CEE201F16C32D005CBD0E /* Scout Watch App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Scout Watch App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		044CEE261F16C32D005CBD0E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		044CEE271F16C32D005CBD0E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		044CEE291F16C32D005CBD0E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		044CEE2B1F16C32D005CBD0E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		044CEE2D1F16C32D005CBD0E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		044CEE2F1F16C32D005CBD0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		044CEE311F16C32D005CBD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044CEE3D1F16D076005CBD0E /* Beacon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Beacon.entitlements; sourceTree = "<group>"; };
+		044CEE471F16E132005CBD0E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		044CEE491F16E51D005CBD0E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		044CEE4B1F16E51D005CBD0E /* Scout Watch App Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scout Watch App Extension.entitlements"; sourceTree = "<group>"; };
+		045A15371F4EA82400FDEBFC /* night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = night.jpg; sourceTree = "<group>"; };
+		0474950B1F5919A600841A31 /* sea.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sea.mp4; sourceTree = "<group>"; };
+		047495111F5A6A5A00841A31 /* DailySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySummary.swift; sourceTree = "<group>"; };
+		049A2AC41F86C1B3002DDF00 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		049A2AC71F86CC9C002DDF00 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		049A2AC91F89DCF0002DDF00 /* StatSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSummary.swift; sourceTree = "<group>"; };
+		04B972331F587F9C00F9512E /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
+		04DDBA561F5D0C0800A7D4BC /* evening.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evening.jpg; sourceTree = "<group>"; };
+		04DDBA5C1F5E1AE000A7D4BC /* noon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noon.jpg; sourceTree = "<group>"; };
+		081DA0442CCF7D4B5B5F4116 /* Pods_Hal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B0220DCFE83DBD87DDE238E /* Pods-Scout Watch App Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scout Watch App Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scout Watch App Extension/Pods-Scout Watch App Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		10D0467A149BBAA8AD9CDF55 /* Pods-Scout Watch App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scout Watch App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scout Watch App/Pods-Scout Watch App.debug.xcconfig"; sourceTree = "<group>"; };
+		19A73A0CE232E2BC67282383 /* Pods-HalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HalUITests/Pods-HalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1F342597B202F05D9E067C4D /* Pods-Hal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hal/Pods-Hal.release.xcconfig"; sourceTree = "<group>"; };
+		28D1E8677B36D26C03087CFA /* Pods-Hal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hal/Pods-Hal.debug.xcconfig"; sourceTree = "<group>"; };
+		3CDEACB6BD41319B81901B41 /* Pods_Scout_Watch_App_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scout_Watch_App_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50298CA87E714A456F205C77 /* Pods-HalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HalTests/Pods-HalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FB2C393E97F72F22005DB59 /* Pods-HalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HalTests/Pods-HalTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A8293F677F3C7D1EBB8B812 /* Pods_Scout_Watch_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scout_Watch_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6318519DAEE61CA65D8AA72 /* Pods_HalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B19E3EBCA0411BED15E94C06 /* Pods-Scout Watch App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scout Watch App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scout Watch App/Pods-Scout Watch App.release.xcconfig"; sourceTree = "<group>"; };
+		DBCD4EB9A0D170E8D46E3B90 /* Pods_HalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D96107E784C36A85EE15E4 /* Pods-HalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HalUITests/Pods-HalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAD6CF9D9958327A719C5C87 /* Pods-Scout Watch App Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scout Watch App Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scout Watch App Extension/Pods-Scout Watch App Extension.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		044CEDDB1F169E4E005CBD0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				043702951F4E49BF001EF6E7 /* CoreData.framework in Frameworks */,
+				04471C9E1F181AB900F1023A /* UserNotifications.framework in Frameworks */,
+				044CEE481F16E132005CBD0E /* HealthKit.framework in Frameworks */,
+				1D337F7D72CDAE0981BF07E7 /* Pods_Hal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEDF21F169E4E005CBD0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871E80229D9C1DAC60C0A4A8 /* Pods_HalTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEDFD1F169E4F005CBD0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C03CECB3914D0E857DFC9AE /* Pods_HalUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEE1D1F16C32D005CBD0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CEE4A1F16E51D005CBD0E /* HealthKit.framework in Frameworks */,
+				2B0AA8D9C732954C58FA927E /* Pods_Scout_Watch_App_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AED174C144ABA7A458157FD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDBBB1DE971C116BC8ABAAB6 /* Pods_Scout_Watch_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0407A5941F65B52A006B01E5 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				0407A5921F65B4E9006B01E5 /* SegueFromLeft.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		042FD2E81F2498FE00A6DF49 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				042FD2E51F2498AB00A6DF49 /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		042FD2EB1F269AD100A6DF49 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				042FD2E91F2696AD00A6DF49 /* ChartManager.swift */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
+		042FD2EE1F27F80E00A6DF49 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				043701F71F396713001EF6E7 /* Background.swift */,
+				044734FA1F57DDAA00C85608 /* AnimatedBackground.swift */,
+				044734F31F553E4000C85608 /* morning.jpg */,
+				04DDBA561F5D0C0800A7D4BC /* evening.jpg */,
+				04DDBA5C1F5E1AE000A7D4BC /* noon.jpg */,
+				045A15371F4EA82400FDEBFC /* night.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		043701FD1F4622C2001EF6E7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		043702651F4A681A001EF6E7 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				044734F01F54D6DE00C85608 /* bouncing_heart.json */,
+				0407A58E1F639DAB006B01E5 /* data.json */,
+				0437028B1F4BDC97001EF6E7 /* heart.json */,
+				0437028E1F4BDE4B001EF6E7 /* loader.json */,
+				0407A58C1F630FBD006B01E5 /* hamburger.json */,
+				043702631F4A6816001EF6E7 /* preloader.json */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		044734F71F577EAA00C85608 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				044734F51F577EA300C85608 /* Report.swift */,
+			);
+			name = Report;
+			sourceTree = "<group>";
+		};
+		044CEDD51F169E4E005CBD0E = {
+			isa = PBXGroup;
+			children = (
+				044CEDE01F169E4E005CBD0E /* Hal */,
+				044CEDF81F169E4F005CBD0E /* BeaconTests */,
+				044CEE031F169E4F005CBD0E /* BeaconUITests */,
+				044CEE151F16C32D005CBD0E /* Scout Watch App */,
+				044CEE241F16C32D005CBD0E /* Scout Watch App Extension */,
+				044CEDDF1F169E4E005CBD0E /* Products */,
+				044CEE3E1F16D077005CBD0E /* Frameworks */,
+				52BB02784DF098C7E3487063 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		044CEDDF1F169E4E005CBD0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				044CEDDE1F169E4E005CBD0E /* Hal.app */,
+				044CEDF51F169E4E005CBD0E /* HalTests.xctest */,
+				044CEE001F169E4F005CBD0E /* HalUITests.xctest */,
+				044CEE141F16C32D005CBD0E /* Scout Watch App.app */,
+				044CEE201F16C32D005CBD0E /* Scout Watch App Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		044CEDE01F169E4E005CBD0E /* Hal */ = {
+			isa = PBXGroup;
+			children = (
+				044CEE3D1F16D076005CBD0E /* Beacon.entitlements */,
+				043702651F4A681A001EF6E7 /* Animations */,
+				049A2AC61F86C1BB002DDF00 /* Collection */,
+				0474950D1F592B2600841A31 /* Assets */,
+				042FD2EB1F269AD100A6DF49 /* Chart */,
+				04F3087C1F5BC9960025EECB /* Components */,
+				046D86EE1F2237EA000BC423 /* Events */,
+				046D86ED1F2237E1000BC423 /* Remote */,
+				046D86EF1F2237FA000BC423 /* GlucoseSample */,
+				043701FD1F4622C2001EF6E7 /* Notifications */,
+				042FD2EE1F27F80E00A6DF49 /* Images */,
+				04B972361F587FA200F9512E /* Security */,
+				044734F71F577EAA00C85608 /* Report */,
+				046D86F01F22380B000BC423 /* Math */,
+				0407A5941F65B52A006B01E5 /* Transitions */,
+				042FD2E81F2498FE00A6DF49 /* Utils */,
+				044CEDE11F169E4E005CBD0E /* AppDelegate.swift */,
+				044CEDE31F169E4E005CBD0E /* ViewController.swift */,
+				0407A5901F63A92D006B01E5 /* SettingsController.swift */,
+				043702921F4D41A1001EF6E7 /* LoginViewController.swift */,
+				044CEDE51F169E4E005CBD0E /* Main.storyboard */,
+				043702901F4C0547001EF6E7 /* AppIcon.appiconset */,
+				044CEDEB1F169E4E005CBD0E /* Assets.xcassets */,
+				044CEDED1F169E4E005CBD0E /* LaunchScreen.storyboard */,
+				044CEDF01F169E4E005CBD0E /* Info.plist */,
+				044CEDE81F169E4E005CBD0E /* Beacon.xcdatamodeld */,
+			);
+			name = Hal;
+			path = Beacon;
+			sourceTree = "<group>";
+		};
+		044CEDF81F169E4F005CBD0E /* BeaconTests */ = {
+			isa = PBXGroup;
+			children = (
+				044CEDF91F169E4F005CBD0E /* BeaconTests.swift */,
+				044CEDFB1F169E4F005CBD0E /* Info.plist */,
+			);
+			path = BeaconTests;
+			sourceTree = "<group>";
+		};
+		044CEE031F169E4F005CBD0E /* BeaconUITests */ = {
+			isa = PBXGroup;
+			children = (
+				044CEE041F169E4F005CBD0E /* BeaconUITests.swift */,
+				044CEE061F169E4F005CBD0E /* Info.plist */,
+			);
+			path = BeaconUITests;
+			sourceTree = "<group>";
+		};
+		044CEE151F16C32D005CBD0E /* Scout Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				044CEE161F16C32D005CBD0E /* Interface.storyboard */,
+				044CEE191F16C32D005CBD0E /* Assets.xcassets */,
+				044CEE1B1F16C32D005CBD0E /* Info.plist */,
+			);
+			path = "Scout Watch App";
+			sourceTree = "<group>";
+		};
+		044CEE241F16C32D005CBD0E /* Scout Watch App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				044CEE4B1F16E51D005CBD0E /* Scout Watch App Extension.entitlements */,
+				044CEE271F16C32D005CBD0E /* InterfaceController.swift */,
+				044CEE291F16C32D005CBD0E /* ExtensionDelegate.swift */,
+				044CEE2B1F16C32D005CBD0E /* NotificationController.swift */,
+				044CEE2D1F16C32D005CBD0E /* ComplicationController.swift */,
+				044CEE2F1F16C32D005CBD0E /* Assets.xcassets */,
+				044CEE311F16C32D005CBD0E /* Info.plist */,
+				044CEE251F16C32D005CBD0E /* Supporting Files */,
+			);
+			path = "Scout Watch App Extension";
+			sourceTree = "<group>";
+		};
+		044CEE251F16C32D005CBD0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				044CEE261F16C32D005CBD0E /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		044CEE3E1F16D077005CBD0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				043702941F4E49BF001EF6E7 /* CoreData.framework */,
+				0437025A1F4A4650001EF6E7 /* Lottie.framework */,
+				043702561F49F6BB001EF6E7 /* Lottie.framework */,
+				04471CA51F1ABC1D00F1023A /* UserNotificationsUI.framework */,
+				04471C9D1F181AB900F1023A /* UserNotifications.framework */,
+				044CEE491F16E51D005CBD0E /* HealthKit.framework */,
+				044CEE471F16E132005CBD0E /* HealthKit.framework */,
+				081DA0442CCF7D4B5B5F4116 /* Pods_Hal.framework */,
+				DBCD4EB9A0D170E8D46E3B90 /* Pods_HalTests.framework */,
+				A6318519DAEE61CA65D8AA72 /* Pods_HalUITests.framework */,
+				8A8293F677F3C7D1EBB8B812 /* Pods_Scout_Watch_App.framework */,
+				3CDEACB6BD41319B81901B41 /* Pods_Scout_Watch_App_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		046D86ED1F2237E1000BC423 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				04471C9F1F18982200F1023A /* HealthKitBridge.swift */,
+				041074711F76263200C86F13 /* DexcomBridge.swift */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
+		046D86EE1F2237EA000BC423 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				04471CA31F18A29000F1023A /* EventDispatcher.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		046D86EF1F2237FA000BC423 /* GlucoseSample */ = {
+			isa = PBXGroup;
+			children = (
+				042701291F1EC85200133257 /* GlucoseSample.swift */,
+			);
+			name = GlucoseSample;
+			sourceTree = "<group>";
+		};
+		046D86F01F22380B000BC423 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				04471CA11F1898DD00F1023A /* Math.swift */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+		0474950D1F592B2600841A31 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0474950B1F5919A600841A31 /* sea.mp4 */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		049A2AC61F86C1BB002DDF00 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				049A2AC91F89DCF0002DDF00 /* StatSummary.swift */,
+				049A2AC41F86C1B3002DDF00 /* CollectionViewCell.swift */,
+				049A2AC71F86CC9C002DDF00 /* Summary.swift */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		04B972361F587FA200F9512E /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				04B972331F587F9C00F9512E /* KeychainSwiftDistrib.swift */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		04F3087C1F5BC9960025EECB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				047495111F5A6A5A00841A31 /* DailySummary.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		52BB02784DF098C7E3487063 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28D1E8677B36D26C03087CFA /* Pods-Hal.debug.xcconfig */,
+				1F342597B202F05D9E067C4D /* Pods-Hal.release.xcconfig */,
+				50298CA87E714A456F205C77 /* Pods-HalTests.debug.xcconfig */,
+				6FB2C393E97F72F22005DB59 /* Pods-HalTests.release.xcconfig */,
+				E8D96107E784C36A85EE15E4 /* Pods-HalUITests.debug.xcconfig */,
+				19A73A0CE232E2BC67282383 /* Pods-HalUITests.release.xcconfig */,
+				10D0467A149BBAA8AD9CDF55 /* Pods-Scout Watch App.debug.xcconfig */,
+				B19E3EBCA0411BED15E94C06 /* Pods-Scout Watch App.release.xcconfig */,
+				0B0220DCFE83DBD87DDE238E /* Pods-Scout Watch App Extension.debug.xcconfig */,
+				FAD6CF9D9958327A719C5C87 /* Pods-Scout Watch App Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		044CEDDD1F169E4E005CBD0E /* Hal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044CEE091F169E4F005CBD0E /* Build configuration list for PBXNativeTarget "Hal" */;
+			buildPhases = (
+				D654F491097DD316C6B428BB /* [CP] Check Pods Manifest.lock */,
+				044CEDDA1F169E4E005CBD0E /* Sources */,
+				044CEDDB1F169E4E005CBD0E /* Frameworks */,
+				044CEDDC1F169E4E005CBD0E /* Resources */,
+				044CEE3C1F16C32D005CBD0E /* Embed Watch Content */,
+				046D86E81F20FD1E000BC423 /* Embed Frameworks */,
+				043702581F49F6CC001EF6E7 /* CopyFiles */,
+				DA538583746053ADAB674C27 /* [CP] Embed Pods Frameworks */,
+				D71EB4CC4F9AB14BC8B5709A /* [CP] Copy Pods Resources */,
+				047495151F5A6B9400841A31 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044CEE331F16C32D005CBD0E /* PBXTargetDependency */,
+			);
+			name = Hal;
+			productName = Beacon;
+			productReference = 044CEDDE1F169E4E005CBD0E /* Hal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		044CEDF41F169E4E005CBD0E /* HalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044CEE0C1F169E4F005CBD0E /* Build configuration list for PBXNativeTarget "HalTests" */;
+			buildPhases = (
+				20BCB8550255B8AFCB38338A /* [CP] Check Pods Manifest.lock */,
+				044CEDF11F169E4E005CBD0E /* Sources */,
+				044CEDF21F169E4E005CBD0E /* Frameworks */,
+				044CEDF31F169E4E005CBD0E /* Resources */,
+				25884AA2B794224ED60C03D6 /* [CP] Embed Pods Frameworks */,
+				5E5B7C10B17F6FF6A5EBE9B4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044CEDF71F169E4F005CBD0E /* PBXTargetDependency */,
+			);
+			name = HalTests;
+			productName = BeaconTests;
+			productReference = 044CEDF51F169E4E005CBD0E /* HalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		044CEDFF1F169E4F005CBD0E /* HalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044CEE0F1F169E4F005CBD0E /* Build configuration list for PBXNativeTarget "HalUITests" */;
+			buildPhases = (
+				80706D9A544974910C5FFB0C /* [CP] Check Pods Manifest.lock */,
+				044CEDFC1F169E4F005CBD0E /* Sources */,
+				044CEDFD1F169E4F005CBD0E /* Frameworks */,
+				044CEDFE1F169E4F005CBD0E /* Resources */,
+				8BE3570669BA5F13D358D567 /* [CP] Embed Pods Frameworks */,
+				7D3710EA1BED603E9D7BB326 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044CEE021F169E4F005CBD0E /* PBXTargetDependency */,
+			);
+			name = HalUITests;
+			productName = BeaconUITests;
+			productReference = 044CEE001F169E4F005CBD0E /* HalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		044CEE131F16C32D005CBD0E /* Scout Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044CEE391F16C32D005CBD0E /* Build configuration list for PBXNativeTarget "Scout Watch App" */;
+			buildPhases = (
+				DC1DBF184AFA49E79B42D7B7 /* [CP] Check Pods Manifest.lock */,
+				044CEE121F16C32D005CBD0E /* Resources */,
+				044CEE381F16C32D005CBD0E /* Embed App Extensions */,
+				AED174C144ABA7A458157FD9 /* Frameworks */,
+				21B39D85F9E92276A77D42EB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044CEE231F16C32D005CBD0E /* PBXTargetDependency */,
+			);
+			name = "Scout Watch App";
+			productName = "Scout Watch App";
+			productReference = 044CEE141F16C32D005CBD0E /* Scout Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		044CEE1F1F16C32D005CBD0E /* Scout Watch App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044CEE351F16C32D005CBD0E /* Build configuration list for PBXNativeTarget "Scout Watch App Extension" */;
+			buildPhases = (
+				6BDA887CD8EE932E1BCFAF96 /* [CP] Check Pods Manifest.lock */,
+				044CEE1C1F16C32D005CBD0E /* Sources */,
+				044CEE1D1F16C32D005CBD0E /* Frameworks */,
+				044CEE1E1F16C32D005CBD0E /* Resources */,
+				F67DCBF7C8B70A1CBDA6392F /* [CP] Embed Pods Frameworks */,
+				D9859BA7329C6C332F3AD0EF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Scout Watch App Extension";
+			productName = "Scout Watch App Extension";
+			productReference = 044CEE201F16C32D005CBD0E /* Scout Watch App Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		044CEDD61F169E4E005CBD0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Thibault Imbert";
+				TargetAttributes = {
+					044CEDDD1F169E4E005CBD0E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KM42YNFQEY;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					044CEDF41F169E4E005CBD0E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 044CEDDD1F169E4E005CBD0E;
+					};
+					044CEDFF1F169E4F005CBD0E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 044CEDDD1F169E4E005CBD0E;
+					};
+					044CEE131F16C32D005CBD0E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KM42YNFQEY;
+						ProvisioningStyle = Automatic;
+					};
+					044CEE1F1F16C32D005CBD0E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KM42YNFQEY;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 044CEDD91F169E4E005CBD0E /* Build configuration list for PBXProject "Hal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 044CEDD51F169E4E005CBD0E;
+			productRefGroup = 044CEDDF1F169E4E005CBD0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				044CEDDD1F169E4E005CBD0E /* Hal */,
+				044CEDF41F169E4E005CBD0E /* HalTests */,
+				044CEDFF1F169E4F005CBD0E /* HalUITests */,
+				044CEE131F16C32D005CBD0E /* Scout Watch App */,
+				044CEE1F1F16C32D005CBD0E /* Scout Watch App Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		044CEDDC1F169E4E005CBD0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0474950C1F5919BC00841A31 /* sea.mp4 in Resources */,
+				0407A58D1F630FBD006B01E5 /* hamburger.json in Resources */,
+				043702911F4C0547001EF6E7 /* AppIcon.appiconset in Resources */,
+				044734F11F54D6DE00C85608 /* bouncing_heart.json in Resources */,
+				044CEDEF1F169E4E005CBD0E /* LaunchScreen.storyboard in Resources */,
+				0437028F1F4BDE4B001EF6E7 /* loader.json in Resources */,
+				0437028C1F4BDC97001EF6E7 /* heart.json in Resources */,
+				04DDBA571F5D0C0800A7D4BC /* evening.jpg in Resources */,
+				043702641F4A6817001EF6E7 /* preloader.json in Resources */,
+				044CEDEC1F169E4E005CBD0E /* Assets.xcassets in Resources */,
+				04DDBA5D1F5E1AE000A7D4BC /* noon.jpg in Resources */,
+				044734F41F553E4100C85608 /* morning.jpg in Resources */,
+				044CEDE71F169E4E005CBD0E /* Main.storyboard in Resources */,
+				0407A58F1F639DAB006B01E5 /* data.json in Resources */,
+				045A15381F4EA82400FDEBFC /* night.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEDF31F169E4E005CBD0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEDFE1F169E4F005CBD0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEE121F16C32D005CBD0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CEE1A1F16C32D005CBD0E /* Assets.xcassets in Resources */,
+				044CEE181F16C32D005CBD0E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEE1E1F16C32D005CBD0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CEE301F16C32D005CBD0E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		047495151F5A6B9400841A31 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 09fac4b5724dad536ea477628cf09347006f915b b6415a07906a511e15e4a5f18380c311af9dfb3d07b200b4cc915735a7a4d1b5";
+		};
+		20BCB8550255B8AFCB38338A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21B39D85F9E92276A77D42EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scout Watch App/Pods-Scout Watch App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25884AA2B794224ED60C03D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HalTests/Pods-HalTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E5B7C10B17F6FF6A5EBE9B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HalTests/Pods-HalTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BDA887CD8EE932E1BCFAF96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Scout Watch App Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D3710EA1BED603E9D7BB326 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HalUITests/Pods-HalUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80706D9A544974910C5FFB0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HalUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BE3570669BA5F13D358D567 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HalUITests/Pods-HalUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D654F491097DD316C6B428BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D71EB4CC4F9AB14BC8B5709A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hal/Pods-Hal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9859BA7329C6C332F3AD0EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scout Watch App Extension/Pods-Scout Watch App Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA538583746053ADAB674C27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hal/Pods-Hal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/DLLocalNotifications/DLLocalNotifications.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLLocalNotifications.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hal/Pods-Hal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC1DBF184AFA49E79B42D7B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Scout Watch App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F67DCBF7C8B70A1CBDA6392F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scout Watch App Extension/Pods-Scout Watch App Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		044CEDDA1F169E4E005CBD0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0407A5931F65B4E9006B01E5 /* SegueFromLeft.swift in Sources */,
+				043701F81F396713001EF6E7 /* Background.swift in Sources */,
+				047495121F5A6A5A00841A31 /* DailySummary.swift in Sources */,
+				041074721F76263200C86F13 /* DexcomBridge.swift in Sources */,
+				049A2ACA1F89DCF0002DDF00 /* StatSummary.swift in Sources */,
+				04471CA01F18982200F1023A /* HealthKitBridge.swift in Sources */,
+				0407A5911F63A92D006B01E5 /* SettingsController.swift in Sources */,
+				04471CA41F18A29000F1023A /* EventDispatcher.swift in Sources */,
+				042FD2E61F2498AC00A6DF49 /* Utils.swift in Sources */,
+				044CEDEA1F169E4E005CBD0E /* Beacon.xcdatamodeld in Sources */,
+				049A2AC51F86C1B3002DDF00 /* CollectionViewCell.swift in Sources */,
+				0427012A1F1EC85200133257 /* GlucoseSample.swift in Sources */,
+				044734FB1F57DDAA00C85608 /* AnimatedBackground.swift in Sources */,
+				049A2AC81F86CC9C002DDF00 /* Summary.swift in Sources */,
+				042FD2EA1F2696AD00A6DF49 /* ChartManager.swift in Sources */,
+				044CEDE41F169E4E005CBD0E /* ViewController.swift in Sources */,
+				044734F61F577EA400C85608 /* Report.swift in Sources */,
+				044CEDE21F169E4E005CBD0E /* AppDelegate.swift in Sources */,
+				043702931F4D41A1001EF6E7 /* LoginViewController.swift in Sources */,
+				04471CA21F1898DD00F1023A /* Math.swift in Sources */,
+				04B972341F587F9C00F9512E /* KeychainSwiftDistrib.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEDF11F169E4E005CBD0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CEDFA1F169E4F005CBD0E /* BeaconTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEDFC1F169E4F005CBD0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CEE051F169E4F005CBD0E /* BeaconUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044CEE1C1F16C32D005CBD0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CEE2C1F16C32D005CBD0E /* NotificationController.swift in Sources */,
+				044CEE2E1F16C32D005CBD0E /* ComplicationController.swift in Sources */,
+				044CEE2A1F16C32D005CBD0E /* ExtensionDelegate.swift in Sources */,
+				044CEE281F16C32D005CBD0E /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		044CEDF71F169E4F005CBD0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 044CEDDD1F169E4E005CBD0E /* Hal */;
+			targetProxy = 044CEDF61F169E4F005CBD0E /* PBXContainerItemProxy */;
+		};
+		044CEE021F169E4F005CBD0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 044CEDDD1F169E4E005CBD0E /* Hal */;
+			targetProxy = 044CEE011F169E4F005CBD0E /* PBXContainerItemProxy */;
+		};
+		044CEE231F16C32D005CBD0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 044CEE1F1F16C32D005CBD0E /* Scout Watch App Extension */;
+			targetProxy = 044CEE221F16C32D005CBD0E /* PBXContainerItemProxy */;
+		};
+		044CEE331F16C32D005CBD0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 044CEE131F16C32D005CBD0E /* Scout Watch App */;
+			targetProxy = 044CEE321F16C32D005CBD0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		044CEDE51F169E4E005CBD0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044CEDE61F169E4E005CBD0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		044CEDED1F169E4E005CBD0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044CEDEE1F169E4E005CBD0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		044CEE161F16C32D005CBD0E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044CEE171F16C32D005CBD0E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		044CEE071F169E4F005CBD0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		044CEE081F169E4F005CBD0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		044CEE0A1F169E4F005CBD0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28D1E8677B36D26C03087CFA /* Pods-Hal.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Beacon/Beacon.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KM42YNFQEY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Beacon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beacon-app.scout";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		044CEE0B1F169E4F005CBD0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F342597B202F05D9E067C4D /* Pods-Hal.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Beacon/Beacon.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KM42YNFQEY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Beacon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beacon-app.scout";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		044CEE0D1F169E4F005CBD0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50298CA87E714A456F205C77 /* Pods-HalTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BeaconTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.BeaconTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hal.app/Hal";
+			};
+			name = Debug;
+		};
+		044CEE0E1F169E4F005CBD0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FB2C393E97F72F22005DB59 /* Pods-HalTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BeaconTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.BeaconTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hal.app/Hal";
+			};
+			name = Release;
+		};
+		044CEE101F169E4F005CBD0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D96107E784C36A85EE15E4 /* Pods-HalUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BeaconUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.BeaconUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Beacon;
+			};
+			name = Debug;
+		};
+		044CEE111F169E4F005CBD0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19A73A0CE232E2BC67282383 /* Pods-HalUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BeaconUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.BeaconUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Beacon;
+			};
+			name = Release;
+		};
+		044CEE361F16C32D005CBD0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0220DCFE83DBD87DDE238E /* Pods-Scout Watch App Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Scout Watch App Extension/Scout Watch App Extension.entitlements";
+				DEVELOPMENT_TEAM = KM42YNFQEY;
+				INFOPLIST_FILE = "Scout Watch App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.Beacon.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		044CEE371F16C32D005CBD0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD6CF9D9958327A719C5C87 /* Pods-Scout Watch App Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Scout Watch App Extension/Scout Watch App Extension.entitlements";
+				DEVELOPMENT_TEAM = KM42YNFQEY;
+				INFOPLIST_FILE = "Scout Watch App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.Beacon.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		044CEE3A1F16C32D005CBD0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D0467A149BBAA8AD9CDF55 /* Pods-Scout Watch App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KM42YNFQEY;
+				IBSC_MODULE = Scout_Watch_App_Extension;
+				INFOPLIST_FILE = "Scout Watch App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.Beacon.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		044CEE3B1F16C32D005CBD0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B19E3EBCA0411BED15E94C06 /* Pods-Scout Watch App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KM42YNFQEY;
+				IBSC_MODULE = Scout_Watch_App_Extension;
+				INFOPLIST_FILE = "Scout Watch App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.Beacon.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		044CEDD91F169E4E005CBD0E /* Build configuration list for PBXProject "Hal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CEE071F169E4F005CBD0E /* Debug */,
+				044CEE081F169E4F005CBD0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044CEE091F169E4F005CBD0E /* Build configuration list for PBXNativeTarget "Hal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CEE0A1F169E4F005CBD0E /* Debug */,
+				044CEE0B1F169E4F005CBD0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044CEE0C1F169E4F005CBD0E /* Build configuration list for PBXNativeTarget "HalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CEE0D1F169E4F005CBD0E /* Debug */,
+				044CEE0E1F169E4F005CBD0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044CEE0F1F169E4F005CBD0E /* Build configuration list for PBXNativeTarget "HalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CEE101F169E4F005CBD0E /* Debug */,
+				044CEE111F169E4F005CBD0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044CEE351F16C32D005CBD0E /* Build configuration list for PBXNativeTarget "Scout Watch App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CEE361F16C32D005CBD0E /* Debug */,
+				044CEE371F16C32D005CBD0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044CEE391F16C32D005CBD0E /* Build configuration list for PBXNativeTarget "Scout Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CEE3A1F16C32D005CBD0E /* Debug */,
+				044CEE3B1F16C32D005CBD0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		044CEDE81F169E4E005CBD0E /* Beacon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				044CEDE91F169E4E005CBD0E /* Beacon.xcdatamodel */,
+			);
+			currentVersion = 044CEDE91F169E4E005CBD0E /* Beacon.xcdatamodel */;
+			path = Beacon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 044CEDD61F169E4E005CBD0E /* Project object */;
+}
