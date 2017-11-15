@@ -13,7 +13,7 @@ import Charts
 import CoreData
 import Reachability
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate
 {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var current: UILabel!
@@ -49,7 +49,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     private var gestureRecognizer: UIGestureRecognizer!
     private var reachability: Reachability!
     private var toggle: DarwinBoolean = false
-    private var summaryItems: [Summary]! = []
     private var a1cSummary: StatSummary!
     private var bpmSummary: StatSummary!
     private var sdSummary: StatSummary!
@@ -195,17 +194,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return pickerDataSource[row]
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return summaryItems.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
-        let summary: Summary = summaryItems[indexPath.row]
-        cell.displayContent(title: summary.content)
-        return cell
-    }
-    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         // use the row to get the selected row from the picker view
         // using the row extract the value from your datasource (array[row])
@@ -222,10 +210,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-13T08:00:00", endDate: "2017-06-20T08:00:00")
         }
         
-        let pickerLabel = UILabel()
+        let pickerLabel: UILabel = UILabel()
         pickerLabel.textColor = UIColor.white
         pickerLabel.text = selectedValue
-        pickerLabel.font = UIFont(name: ".SFUIText-Semibold", size :18) // In this use your custom font
+        pickerLabel.font = UIFont(name: ".SFUIText-Semibold", size :18)
         pickerLabel.textAlignment = NSTextAlignment.center
         return pickerLabel
     }
@@ -262,7 +250,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     public func onGlucoseValues(event: Event)
     {
-        summaryItems.removeAll()
         activityIndicator.stopAnimating()
         activityIndicator.alpha = 0
         
@@ -273,46 +260,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         //news.center = CGPoint(x: view.frame.width/2,y: -173+view.frame.height/2);
         news.text = "Your heart rate has been steady for the past 48 hours, maybe time for a run?"
         
-        // clean past data (debug)
-        (UIApplication.shared.delegate as! AppDelegate).deleteSamplesData()
-        
         // reference the result (Array of BGSample)
         results = remoteBridge.bloodSamples
         
-        /*
-        // initiate daily samples records
-        let dailySample = DailySamples(context: managedObjectContext)
-        dailySample.createdAt = Date() as NSDate
-        dailySample.name = "24 hour samples"
-        
-        var samples: [Any] = []
-        
-        // fill the results
-        for result in results {
-            let bgSample = GSample(context: managedObjectContext)
-            bgSample.time = result.time
-            bgSample.value = Int32(result.value)
-            bgSample.trend = result.trend
-            samples.append(bgSample)
-        }
-        
-        let data = NSSet(array: samples)
-        dailySample.samples = data
-        
-        do {
-            try self.managedObjectContext.save()
-            
-        } catch { print ("error while saving data") }
-        
-        let samplesRequest: NSFetchRequest<NSFetchRequestResult> = DailySamples.fetchRequest()
-        
-        do{
-            let samples: [DailySamples] = try managedObjectContext.fetch(samplesRequest) as! [DailySamples]
-            let records = samples[0].samples
-        } catch { print ("error loading data") }
- */
-        
-        let sampleDate:String = results[0].time
+        let sampleDate: String = results[0].time
         current.text = sampleDate + "\n" + String (describing: results[0].value) + " mg/DL " + results[0].trend
         
         // details UI
@@ -328,11 +279,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         // display results
         infosLeft +=  "24-hour report"
-        let a1C:Summary = Summary (content: String(round(Math.A1C(samples: results))))
-        let heartBpm: Summary = Summary (content: String(round(averageHrate)))
-        let sd:Summary = Summary(content: String (round(Math.computeSD(samples: results))))
-        let avg: Summary = Summary (content: String (average))
-        let acceleration: Summary = Summary (content: String (chartManager.curvature.roundTo(places: 2)))
+        let a1C:String = String(round(Math.A1C(samples: results)))
+        let heartBpm: String = String(round(averageHrate))
+        let sd:String = String (round(Math.computeSD(samples: results)))
+        let avg: String = String (average)
+        let acceleration: String = String (chartManager.curvature.roundTo(places: 2))
         
         news.alpha = 1
         
@@ -345,9 +296,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let averageNormal: Double = ceil(Math.computeAverage(samples: normal))
         let averageLow: Double = ceil(Math.computeAverage(samples: lows))
         
-        let avgHigh:Summary = Summary(content: "Avg/High: " + String(describing: averageHigh.roundTo(places: 2)))
-        let avgNormal: Summary = Summary (content: "mg/dL \nAvg/Normal: " + String(describing: averageNormal.roundTo(places: 2)) + " mg/dL")
-        let avgLow: Summary = Summary (content: "Avg/Low: " + String(describing: averageLow.roundTo(places: 2)) + " mg/dL")
+        let avgHigh: String = "Avg/High: " + String(describing: averageHigh.roundTo(places: 2))
+        let avgNormal: String = "mg/dL \nAvg/Normal: " + String(describing: averageNormal.roundTo(places: 2)) + " mg/dL"
+        let avgLow: String = "Avg/Low: " + String(describing: averageLow.roundTo(places: 2)) + " mg/dL"
         
         // percentages
         let highsPercentage : Double = Double (highs.count) / Double (results.count)
@@ -355,9 +306,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let lowsPercentage : Double = Double (lows.count) / Double(results.count)
         
         let highRatio: Double = (24.0 * highsPercentage).roundTo(places: 2)
-        let highsSum:Summary = Summary (content: "Highs: " + String ( highsPercentage.roundTo(places: 2) * 100 ) + "%")
-        let normalSum: Summary = Summary (content: String ( normalRangePercentage.roundTo(places: 2) * 100 ))
-        let low: Summary = Summary (content: "Lows: " + String ( lowsPercentage.roundTo(places: 2) * 100 ) + "%")
+        let highsSum:String = "Highs: " + String ( highsPercentage.roundTo(places: 2) * 100 ) + "%"
+        let normalSum: String = String ( normalRangePercentage.roundTo(places: 2) * 100 )
+        let low: String = "Lows: " + String ( lowsPercentage.roundTo(places: 2) * 100 ) + "%"
        // infosRight += " "+String(describing: highRatio) + " hours total"
         let normalRatio: Double = (24.0 * normalRangePercentage).roundTo(places: 2)
         //infosLeft += "\nNormal: " + String ( normalRangePercentage.roundTo(places: 2) * 100 ) + "%"
@@ -366,13 +317,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         //infosLeft += "\nLows: " + String ( lowsPercentage.roundTo(places: 2) * 100 ) + "%"
         //infosRight += " "+String(describing: lowRatio) + " hours total"
         
-        // update stats
-        a1cSummary.update(icon: "Droplet", text: a1C.content, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
-        bpmSummary.update(icon: "Heart", text: heartBpm.content, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
-        sdSummary.update(icon: "UpArrows", text: sd.content, txtOffsetX: 35, txtOffsetY: 3, offsetX: 0, offsetY: 0, width: 28, height: 28)
-        avgSummary.update(icon: "Chart", text: avg.content, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
-        accelSummary.update(icon: "Rising", text: acceleration.content, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
-        percentageNormalSummary.update(icon: "UpArrows", text: normalSum.content, txtOffsetX: 35, txtOffsetY:3, offsetX:0, offsetY: 0, width: 28, height: 28)
+        // update high level summary stats
+        a1cSummary.update(icon: "Droplet", text: a1C, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
+        bpmSummary.update(icon: "Heart", text: heartBpm, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
+        sdSummary.update(icon: "UpArrows", text: sd, txtOffsetX: 35, txtOffsetY: 3, offsetX: 0, offsetY: 0, width: 28, height: 28)
+        avgSummary.update(icon: "Chart", text: avg, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
+        accelSummary.update(icon: "Rising", text: acceleration, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
+        percentageNormalSummary.update(icon: "UpArrows", text: normalSum, txtOffsetX: 35, txtOffsetY:3, offsetX:0, offsetY: 0, width: 28, height: 28)
     }
     
     public func onSelection(event: Event?)
