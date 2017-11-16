@@ -57,6 +57,10 @@
 		04B972341F587F9C00F9512E /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B972331F587F9C00F9512E /* KeychainSwiftDistrib.swift */; };
 		04DDBA571F5D0C0800A7D4BC /* evening.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DDBA561F5D0C0800A7D4BC /* evening.jpg */; };
 		04DDBA5D1F5E1AE000A7D4BC /* noon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DDBA5C1F5E1AE000A7D4BC /* noon.jpg */; };
+		04E5113C1FBD5902000C74FC /* LoginBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5113B1FBD5902000C74FC /* LoginBackground.swift */; };
+		04E5113E1FBD5B13000C74FC /* hero.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04E5113D1FBD5B13000C74FC /* hero.jpg */; };
+		04E511451FBD6A27000C74FC /* PT Sans Narrow regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04E511431FBD6A1D000C74FC /* PT Sans Narrow regular.otf */; };
+		04E511461FBD6A35000C74FC /* PT Sans Narrow regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04E511431FBD6A1D000C74FC /* PT Sans Narrow regular.otf */; };
 		1D337F7D72CDAE0981BF07E7 /* Pods_Hal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081DA0442CCF7D4B5B5F4116 /* Pods_Hal.framework */; };
 		2B0AA8D9C732954C58FA927E /* Pods_Scout_Watch_App_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDEACB6BD41319B81901B41 /* Pods_Scout_Watch_App_Extension.framework */; };
 		7C03CECB3914D0E857DFC9AE /* Pods_HalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6318519DAEE61CA65D8AA72 /* Pods_HalUITests.framework */; };
@@ -204,6 +208,9 @@
 		04B972331F587F9C00F9512E /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 		04DDBA561F5D0C0800A7D4BC /* evening.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evening.jpg; sourceTree = "<group>"; };
 		04DDBA5C1F5E1AE000A7D4BC /* noon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noon.jpg; sourceTree = "<group>"; };
+		04E5113B1FBD5902000C74FC /* LoginBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackground.swift; sourceTree = "<group>"; };
+		04E5113D1FBD5B13000C74FC /* hero.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hero.jpg; sourceTree = "<group>"; };
+		04E511431FBD6A1D000C74FC /* PT Sans Narrow regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Sans Narrow regular.otf"; sourceTree = "<group>"; };
 		081DA0442CCF7D4B5B5F4116 /* Pods_Hal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0220DCFE83DBD87DDE238E /* Pods-Scout Watch App Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scout Watch App Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scout Watch App Extension/Pods-Scout Watch App Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		10D0467A149BBAA8AD9CDF55 /* Pods-Scout Watch App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scout Watch App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scout Watch App/Pods-Scout Watch App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -297,8 +304,10 @@
 			isa = PBXGroup;
 			children = (
 				043701F71F396713001EF6E7 /* Background.swift */,
+				04E5113B1FBD5902000C74FC /* LoginBackground.swift */,
 				044734FA1F57DDAA00C85608 /* AnimatedBackground.swift */,
 				044734F31F553E4000C85608 /* morning.jpg */,
+				04E5113D1FBD5B13000C74FC /* hero.jpg */,
 				04DDBA561F5D0C0800A7D4BC /* evening.jpg */,
 				04DDBA5C1F5E1AE000A7D4BC /* noon.jpg */,
 				045A15371F4EA82400FDEBFC /* night.jpg */,
@@ -500,6 +509,7 @@
 		0474950D1F592B2600841A31 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				04E511431FBD6A1D000C74FC /* PT Sans Narrow regular.otf */,
 				0474950B1F5919A600841A31 /* sea.mp4 */,
 			);
 			name = Assets;
@@ -737,6 +747,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E511461FBD6A35000C74FC /* PT Sans Narrow regular.otf in Resources */,
 				0474950C1F5919BC00841A31 /* sea.mp4 in Resources */,
 				0407A58D1F630FBD006B01E5 /* hamburger.json in Resources */,
 				043702911F4C0547001EF6E7 /* AppIcon.appiconset in Resources */,
@@ -745,6 +756,7 @@
 				0437028F1F4BDE4B001EF6E7 /* loader.json in Resources */,
 				0437028C1F4BDC97001EF6E7 /* heart.json in Resources */,
 				04DDBA571F5D0C0800A7D4BC /* evening.jpg in Resources */,
+				04E5113E1FBD5B13000C74FC /* hero.jpg in Resources */,
 				043702641F4A6817001EF6E7 /* preloader.json in Resources */,
 				044CEDEC1F169E4E005CBD0E /* Assets.xcassets in Resources */,
 				04DDBA5D1F5E1AE000A7D4BC /* noon.jpg in Resources */,
@@ -775,6 +787,7 @@
 			files = (
 				044CEE1A1F16C32D005CBD0E /* Assets.xcassets in Resources */,
 				044CEE181F16C32D005CBD0E /* Interface.storyboard in Resources */,
+				04E511451FBD6A27000C74FC /* PT Sans Narrow regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1069,7 @@
 				0407A5911F63A92D006B01E5 /* SettingsController.swift in Sources */,
 				04471CA41F18A29000F1023A /* EventDispatcher.swift in Sources */,
 				042FD2E61F2498AC00A6DF49 /* Utils.swift in Sources */,
+				04E5113C1FBD5902000C74FC /* LoginBackground.swift in Sources */,
 				044CEDEA1F169E4E005CBD0E /* Beacon.xcdatamodeld in Sources */,
 				049A2AC51F86C1B3002DDF00 /* CollectionViewCell.swift in Sources */,
 				0427012A1F1EC85200133257 /* GlucoseSample.swift in Sources */,

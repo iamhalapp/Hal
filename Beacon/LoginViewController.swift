@@ -12,13 +12,14 @@ import OAuthSwift
 class LoginViewController: UIViewController
 {
     @IBOutlet weak var errorLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var taglineLbl: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
     public var defaults: UserDefaults!
     public var dxBridge: DexcomBridge!
     private var loggedIn: EventHandler!
-    private var setupBg: AnimatedBackground!
+    private var setupBg: LoginBackground!
     private var keychain:KeychainSwift!
     private var logo: UIImage!
     private var bodyFont:UIFont!
@@ -46,12 +47,13 @@ class LoginViewController: UIViewController
         
         // font for buttons and labels
         bodyFont = UIFont(name: ".SFUIText-Semibold", size :11)
-        titleFont = UIFont(name: ".SFUIText-Semibold", size :26)
-        taglineLbl.font = titleFont
+        //titleFont = UIFont(name: "PT-Sans-Narrow", size :26)
+      //  taglineLbl.font = titleFont
         errorLbl.font = bodyFont
         
         // tagline
-        taglineLbl.text = "HAL, your diabetic\ncoach in your pocket."
+        titleLbl.text = "HAL,\nYour Diabetes Coach"
+        taglineLbl.text = "The Dexcom companion app that helps you get the most out of your Dexcom."
         
         // rounded corners
         loginButton.layer.cornerRadius = 5
@@ -60,7 +62,7 @@ class LoginViewController: UIViewController
         keychain = KeychainSwift.shared()
         
         // background handling
-        setupBg = AnimatedBackground (parent: self)
+        setupBg = LoginBackground (parent: self)
         
         // auth login
         dxBridge = DexcomBridge.shared()
@@ -72,7 +74,15 @@ class LoginViewController: UIViewController
         
         if code != nil
         {
-            dxBridge.getToken(code: code!)
+            //dxBridge.getToken(code: code!)
+        }
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
         }
     }
 

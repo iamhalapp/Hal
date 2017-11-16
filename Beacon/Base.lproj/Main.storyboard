@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PT Sans Narrow regular.otf">
+            <string>PTSans-Narrow</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -130,7 +135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeV-gr-sHj">
-                                <rect key="frame" x="59" y="520" width="257" height="64"/>
+                                <rect key="frame" x="59" y="557" width="257" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.64313725490196072" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Connect Your Dexcom Account">
@@ -140,10 +145,17 @@
                                     <action selector="login:" destination="3rw-Bs-6gE" eventType="touchUpInside" id="wef-g6-eyw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqa-ou-oD6" userLabel="Tagline">
-                                <rect key="frame" x="41" y="165" width="292" height="138"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqa-ou-oD6" userLabel="Title">
+                                <rect key="frame" x="41" y="174" width="292" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpS-ET-phm" userLabel="Tagline">
+                                <rect key="frame" x="89" y="283" width="196" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -153,7 +165,8 @@
                     <connections>
                         <outlet property="errorLbl" destination="zha-Yz-NS5" id="oRx-Fp-I9S"/>
                         <outlet property="loginButton" destination="FeV-gr-sHj" id="X1j-PQ-TQ4"/>
-                        <outlet property="taglineLbl" destination="Pqa-ou-oD6" id="u3c-V4-gyp"/>
+                        <outlet property="taglineLbl" destination="vpS-ET-phm" id="x1w-dE-0iM"/>
+                        <outlet property="titleLbl" destination="Pqa-ou-oD6" id="Re6-s4-6u4"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Main" id="e2H-Hj-SuX"/>
                     </connections>
                 </viewController>
@@ -193,7 +206,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psM-JC-WJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="-45"/>
+            <point key="canvasLocation" x="449" y="-693"/>
         </scene>
     </scenes>
 </document>

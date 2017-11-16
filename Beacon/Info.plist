@@ -29,6 +29,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>Fonts provided by application</key>
+	<array>
+		<string>PT Sans Narrow regular.otf</string>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Fabric</key>
