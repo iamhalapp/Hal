@@ -74,15 +74,7 @@ class LoginViewController: UIViewController
         
         if code != nil
         {
-            //dxBridge.getToken(code: code!)
-        }
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
+            dxBridge.getToken(code: code!)
         }
     }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GlucoseSample: EventDispatcher
+class GlucoseSample: EventDispatcher, HealthSample
 {
     public var value: Int = 0
     public let time: String
@@ -26,4 +26,15 @@ class GlucoseSample: EventDispatcher
     }
 }
 
-class HeartRateSample: GlucoseSample {}
+class HeartRateSample: HealthSample
+{
+    public var value: Int = 0
+    init (pValue:Int)
+    {
+        value = pValue
+    }
+}
+
+protocol HealthSample {
+    var value: Int { get }
+}

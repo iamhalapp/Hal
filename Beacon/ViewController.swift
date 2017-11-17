@@ -305,11 +305,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let normalRangePercentage : Double = Double (normal.count) / Double (results.count)
         let lowsPercentage : Double = Double (lows.count) / Double(results.count)
         
-        let highRatio: Double = (24.0 * highsPercentage).roundTo(places: 2)
         let highsSum:String = "Highs: " + String ( highsPercentage.roundTo(places: 2) * 100 ) + "%"
         let normalSum: String = String ( normalRangePercentage.roundTo(places: 2) * 100 )
         let low: String = "Lows: " + String ( lowsPercentage.roundTo(places: 2) * 100 ) + "%"
-       // infosRight += " "+String(describing: highRatio) + " hours total"
+        let highRatio: Double = (24.0 * highsPercentage).roundTo(places: 2)
+        // infosRight += " "+String(describing: highRatio) + " hours total"
         let normalRatio: Double = (24.0 * normalRangePercentage).roundTo(places: 2)
         //infosLeft += "\nNormal: " + String ( normalRangePercentage.roundTo(places: 2) * 100 ) + "%"
         //infosRight += " "+String(describing: normalRatio) + " hours total"
@@ -390,6 +390,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     public func onHKAuthorization (event: Event)
     {
         // request heart rate data from HealthKit
+        print ("get heart rate")
         hkBridge.getHeartRate()
     }
     
@@ -408,7 +409,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     {
         print("UPDATE:: Pulling latest data")
         remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-19T08:00:00", endDate: "2017-06-20T08:00:00")
-        hkBridge.getHeartRate()
     }
     
     @objc func refresh()

@@ -107,13 +107,13 @@ class HealthKitBridge: EventDispatcher
             let calendar = Calendar.current
             let yesterday = calendar.date(byAdding: .day, value: fromDay, to: to)
             
-            let mostRecentPredicate = HKQuery.predicateForSamples(withStart: yesterday, end: now as Date)
+            let mostRecentPredicate = HKQuery.predicateForSamples(withStart: yesterday, end: now)
             
             // 2. Build the sort descriptor to return the samples in descending order
             let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierStartDate, ascending: true)
             
             // 3. we want to limit the number of samples returned by the query to just 1 (the most recent)
-            let limit = Int.max
+            let limit = 48
             
             let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)
             
@@ -121,7 +121,6 @@ class HealthKitBridge: EventDispatcher
             let sampleQuery = HKSampleQuery(sampleType: sampleType!, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDescriptor])
             { (sampleQuery, results, error ) -> Void in
                 
-                print ( error )
                 if error != nil {
                     return;
                 }
@@ -134,7 +133,7 @@ class HealthKitBridge: EventDispatcher
                     for sample in bpmResults
                     {
                         let value = sample.quantity.doubleValue(for: bpmUnit)
-                        self.heartRates.append(HeartRateSample(pValue: Int(value), pDate: "", pTime: "", pTrend: ""))
+                        self.heartRates.append(HeartRateSample(pValue: Int(value)))
                     }
                     self.dispatchEvent(event: Event(type: EventType.heartRate, target: self))
                 })

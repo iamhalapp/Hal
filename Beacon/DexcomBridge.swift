@@ -115,7 +115,8 @@ class DexcomBridge: EventDispatcher
 
         Alamofire.request(DexcomBridge.GLUCOSE_URL+"?startDate="+startDate+"&endDate="+endDate, method: .get, headers: headers).responseJSON { response in
             
-            if (response.result.isSuccess) {
+            if (response.result.isSuccess)
+            {
                 do {
                     if let result: JSON = try JSON(data: response.data!) {
                         self.bloodSamples.removeAll()
@@ -134,23 +135,25 @@ class DexcomBridge: EventDispatcher
                             }
                         }
                     }
-                } catch {
+                } catch
+                {
                     print ("error while parsing JSON" )
                 }
-                    DispatchQueue.main.async(execute:
-                    {
-                            self.dispatchEvent(event: Event(type: EventType.glucoseValues, target: self))
-                    })
-                    
-                    if (completionHandler) != nil
-                    {
-                        completionHandler(.newData)
-                    }
+                
+                DispatchQueue.main.async(execute:
+                {
+                        self.dispatchEvent(event: Event(type: EventType.glucoseValues, target: self))
+                })
+                
+                if (completionHandler) != nil
+                {
+                    completionHandler(.newData)
                 }
+            }
     
                 DispatchQueue.main.async(execute: {
                     self.dispatchEvent(event: Event(type: EventType.glucoseIOError, target: self))
                 })
             }
-        }
+    }
 }

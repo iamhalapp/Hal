@@ -50,7 +50,6 @@
 		044CEE481F16E132005CBD0E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044CEE471F16E132005CBD0E /* HealthKit.framework */; };
 		044CEE4A1F16E51D005CBD0E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044CEE491F16E51D005CBD0E /* HealthKit.framework */; };
 		045A15381F4EA82400FDEBFC /* night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045A15371F4EA82400FDEBFC /* night.jpg */; };
-		0474950C1F5919BC00841A31 /* sea.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0474950B1F5919A600841A31 /* sea.mp4 */; };
 		047495121F5A6A5A00841A31 /* DailySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047495111F5A6A5A00841A31 /* DailySummary.swift */; };
 		049A2AC51F86C1B3002DDF00 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A2AC41F86C1B3002DDF00 /* CollectionViewCell.swift */; };
 		049A2ACA1F89DCF0002DDF00 /* StatSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A2AC91F89DCF0002DDF00 /* StatSummary.swift */; };
@@ -201,7 +200,6 @@
 		044CEE491F16E51D005CBD0E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		044CEE4B1F16E51D005CBD0E /* Scout Watch App Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scout Watch App Extension.entitlements"; sourceTree = "<group>"; };
 		045A15371F4EA82400FDEBFC /* night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = night.jpg; sourceTree = "<group>"; };
-		0474950B1F5919A600841A31 /* sea.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sea.mp4; sourceTree = "<group>"; };
 		047495111F5A6A5A00841A31 /* DailySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySummary.swift; sourceTree = "<group>"; };
 		049A2AC41F86C1B3002DDF00 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		049A2AC91F89DCF0002DDF00 /* StatSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSummary.swift; sourceTree = "<group>"; };
@@ -510,7 +508,6 @@
 			isa = PBXGroup;
 			children = (
 				04E511431FBD6A1D000C74FC /* PT Sans Narrow regular.otf */,
-				0474950B1F5919A600841A31 /* sea.mp4 */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -748,7 +745,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E511461FBD6A35000C74FC /* PT Sans Narrow regular.otf in Resources */,
-				0474950C1F5919BC00841A31 /* sea.mp4 in Resources */,
 				0407A58D1F630FBD006B01E5 /* hamburger.json in Resources */,
 				043702911F4C0547001EF6E7 /* AppIcon.appiconset in Resources */,
 				044734F11F54D6DE00C85608 /* bouncing_heart.json in Resources */,

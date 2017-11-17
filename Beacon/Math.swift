@@ -12,7 +12,7 @@ import Charts
 
 class Math {
     
-    static func computeAverage (samples: [GlucoseSample]) -> Double {
+    static func computeAverage (samples: [HealthSample]) -> Double {
         if (samples.count == 0) { return 0.0 }
         var sum: Double = 0
         let total: Double = Double (samples.count)
