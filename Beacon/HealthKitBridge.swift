@@ -11,9 +11,8 @@ import HealthKit
 
 class HealthKitBridge: EventDispatcher
 {
-    
-    private var isAuthorized: Bool? = false
     private var sampleType: HKQuantityType?
+    public var isAuthorized: Bool? = false
     public var bloodSamples: [HKQuantitySample]?
     public var heartRates: [HeartRateSample] = []
     let healthKitStore:HKHealthStore = HKHealthStore()

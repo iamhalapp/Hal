@@ -95,15 +95,6 @@
                     <view key="view" contentMode="scaleToFill" id="UeP-Qp-NAv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlT-Uu-dQa">
-                                <rect key="frame" x="155" y="302" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
@@ -113,7 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbK-ap-kXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="II9-1w-3ub" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="51"/>
+            <point key="canvasLocation" x="1820" y="50.824587706146929"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="4Hf-PJ-WVJ">

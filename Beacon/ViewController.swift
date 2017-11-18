@@ -154,21 +154,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         // init summary stats
         a1cSummary = StatSummary()
+        a1cSummary.setStyle(size: 14)
         a1cSummary.center = CGPoint(x: 70,y: 245)
         self.view.addSubview(a1cSummary)
         bpmSummary = StatSummary()
+        bpmSummary.setStyle(size: 14)
         bpmSummary.center = CGPoint(x: 157,y: 245)
         self.view.addSubview(bpmSummary)
         sdSummary = StatSummary()
+        sdSummary.setStyle(size: 14)
         sdSummary.center = CGPoint(x: 70,y: 285)
         self.view.addSubview(sdSummary)
         avgSummary = StatSummary()
+        avgSummary.setStyle(size: 14)
         avgSummary.center = CGPoint(x: 157,y: 285)
         self.view.addSubview(avgSummary)
         accelSummary = StatSummary()
+        accelSummary.setStyle(size: 14)
         accelSummary.center = CGPoint(x: 244,y: 245)
         self.view.addSubview(accelSummary)
         percentageNormalSummary = StatSummary()
+        percentageNormalSummary.setStyle(size: 14)
         percentageNormalSummary.center = CGPoint(x: 244,y: 285)
         self.view.addSubview(percentageNormalSummary)
         
@@ -320,10 +326,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // update high level summary stats
         a1cSummary.update(icon: "Droplet", text: a1C, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
         bpmSummary.update(icon: "Heart", text: heartBpm, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
-        sdSummary.update(icon: "UpArrows", text: sd, txtOffsetX: 35, txtOffsetY: 3, offsetX: 0, offsetY: 0, width: 28, height: 28)
+        sdSummary.update(icon: "Deviation", text: sd, txtOffsetX: 35, txtOffsetY: 3, offsetX: 0, offsetY: 0, width: 28, height: 28)
         avgSummary.update(icon: "Chart", text: avg, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
         accelSummary.update(icon: "Rising", text: acceleration, txtOffsetX: 35, txtOffsetY:3, offsetX: 0, offsetY: 0, width: 28, height: 28)
-        percentageNormalSummary.update(icon: "UpArrows", text: normalSum, txtOffsetX: 35, txtOffsetY:3, offsetX:0, offsetY: 0, width: 28, height: 28)
+        percentageNormalSummary.update(icon: "Percentage", text: normalSum, txtOffsetX: 35, txtOffsetY:3, offsetX:0, offsetY: 0, width: 28, height: 28)
     }
     
     public func onSelection(event: Event?)
@@ -394,10 +400,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         hkBridge.getHeartRate()
     }
     
-    public func onHKHeartRate (event: Event)
-    {
-        print (hkBridge.heartRates)
-    }
+    public func onHKHeartRate (event: Event) {}
     
     public func getRandomQuote() -> String
     {
@@ -409,6 +412,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     {
         print("UPDATE:: Pulling latest data")
         remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-19T08:00:00", endDate: "2017-06-20T08:00:00")
+        hkBridge.getHeartRate()
     }
     
     @objc func refresh()
