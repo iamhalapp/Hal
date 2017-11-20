@@ -11,15 +11,44 @@ import UIKit
 import CoreData
 import Alamofire
 import SwiftyJSON
+import OAuthSwift
 
 class DexcomBridge: EventDispatcher
 {
-    public var bloodSamples: [GlucoseSample] = []
     public static var TOKEN: String!
-    public static var REFRESH_TOKEN: String!
+    public static var REFRESHED_TOKEN: String!
+    
+    private static let CONSUMER_KEY: String = "sFW420cYM1CukL3ogpmHyB61m06c5Qb5"
+    private static let CONSUMER_SECRET: String = "CL0QpJq42XhNAsok"
+    
     private static var TOKEN_URL: String = "https://sandbox-api.dexcom.com/v1/oauth2/token"
     private static var GLUCOSE_URL: String = "https://sandbox-api.dexcom.com/v1/users/self/egvs"
+    private static let AUTHORIZE_URL:String = "https://sandbox-api.dexcom.com/v1/oauth2/login"
+    private static let REDIRECT_URI: String = "com.beacon-app.scout"
+    private static let ACCESS_TOKEN_URL:String = "offline_access"
+    private static let RESPONSE_TYPE: String = "code"
+    private static let AUTHORIZATION_CODE: String = "authorization_code"
+    private static let REFRESH_TOKEN: String = "refresh_token"
+    
+    enum RemoteError: Error {
+        case description (details: String)
+    }
+    
+    public var bloodSamples: [GlucoseSample] = []
     private var dataTask: URLSessionDataTask?
+    
+    private let headers: HTTPHeaders = [
+        "content-type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache"
+    ]
+    
+    public let oauthswift = OAuth2Swift(
+        consumerKey:    DexcomBridge.CONSUMER_KEY,
+        consumerSecret: DexcomBridge.CONSUMER_SECRET,
+        authorizeUrl:   DexcomBridge.AUTHORIZE_URL,
+        accessTokenUrl: DexcomBridge.ACCESS_TOKEN_URL,
+        responseType:   DexcomBridge.RESPONSE_TYPE
+    )
     
     private static var sharedDexcomBridge: DexcomBridge =
     {
@@ -36,53 +65,59 @@ class DexcomBridge: EventDispatcher
     public func getToken(code: String)
     {
         let parameters: Parameters = [
-            "client_secret": "sAWUZwCSmdoeWlyW",
-            "client_id": "PufsQSdRKnVgCc8phv3CtKrg7gArPHJT",
+            "client_secret": DexcomBridge.CONSUMER_SECRET,
+            "client_id": DexcomBridge.CONSUMER_KEY,
             "code": code,
-            "grant_type":"authorization_code",
-            "redirect_uri":"com.beacon-app.scout"
-        ]
-        
-        let headers: HTTPHeaders = [
-            "content-type": "application/x-www-form-urlencoded",
-            "cache-control": "no-cache"
+            "grant_type": DexcomBridge.AUTHORIZATION_CODE,
+            "redirect_uri": DexcomBridge.REDIRECT_URI
         ]
         
         Alamofire.request(DexcomBridge.TOKEN_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             
             if (response.result.isSuccess)
             {
-                do {
+                do
+                {
                     let result: JSON = try JSON(data: response.data!)
-                    let token: String = result["access_token"].stringValue
-                    let refreshToken: String = result["refresh_token"].stringValue
-                    DexcomBridge.TOKEN = token
-                    DexcomBridge.REFRESH_TOKEN = refreshToken
-                    DispatchQueue.main.async(execute:
+                    if ( result["fault"] != JSON.null )
                     {
-                            self.dispatchEvent(event: Event(type: EventType.token, target: self))
-                    })
-                } catch {
-                    print ( "error while parsing JSON" )
+                        throw RemoteError.description ( details: result["fault"]["detail"]["errorcode"].stringValue )
+                    } else
+                    {
+                        let token: String = result["access_token"].stringValue
+                        let refreshToken: String = result["refresh_token"].stringValue
+                        DexcomBridge.TOKEN = token
+                        DexcomBridge.REFRESHED_TOKEN = refreshToken
+                        DispatchQueue.main.async(execute:
+                        {
+                                self.dispatchEvent(event: Event(type: EventType.token, target: self))
+                        })
+                    }
+                } catch RemoteError.description(let details)
+                {
+                    print ( "Error: " + details )
+                } catch
+                {
+                    print ( "Uncaught error" )
                 }
+            } else
+            {
+                DispatchQueue.main.async(execute: {
+                    self.dispatchEvent(event: Event(type: EventType.glucoseIOError, target: self))
+                })
             }
         }
     }
     
     // authenticates the user to the dexcom REST APIs
-    public func refreshToken(refreshCode: String = DexcomBridge.REFRESH_TOKEN)
+    public func refreshToken(refreshedToken: String = DexcomBridge.REFRESHED_TOKEN)
     {
         let parameters: Parameters = [
-            "client_secret": "sAWUZwCSmdoeWlyW",
-            "client_id": "PufsQSdRKnVgCc8phv3CtKrg7gArPHJT",
-            "refresh_token": refreshCode,
-            "grant_type":"refresh_token",
-            "redirect_uri":"com.beacon-app.scout"
-        ]
-        
-        let headers: HTTPHeaders = [
-            "content-type": "application/x-www-form-urlencoded",
-            "cache-control": "no-cache"
+            "client_secret": DexcomBridge.CONSUMER_SECRET,
+            "client_id": DexcomBridge.CONSUMER_KEY,
+            "refresh_token": refreshedToken,
+            "grant_type": DexcomBridge.REFRESH_TOKEN,
+            "redirect_uri": DexcomBridge.REDIRECT_URI
         ]
         
         Alamofire.request(DexcomBridge.TOKEN_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { response in
@@ -91,17 +126,32 @@ class DexcomBridge: EventDispatcher
             {
                 do {
                     let result: JSON = try JSON(data: response.data!)
-                    let token: String = result["access_token"].stringValue
-                    let refreshToken: String = result["refresh_token"].stringValue
-                    DexcomBridge.TOKEN = token
-                    DexcomBridge.REFRESH_TOKEN = refreshToken
-                    DispatchQueue.main.async(execute:
-                        {
-                            self.dispatchEvent(event: Event(type: EventType.refreshToken, target: self))
-                    })
-                } catch {
-                    print ( "error while parsing JSON" )
+                    if ( result["fault"] != JSON.null )
+                    {
+                        throw RemoteError.description ( details: result["fault"]["detail"]["errorcode"].stringValue )
+                    } else
+                    {
+                        let token: String = result["access_token"].stringValue
+                        let refreshToken: String = result["refresh_token"].stringValue
+                        DexcomBridge.TOKEN = token
+                        DexcomBridge.REFRESHED_TOKEN = refreshToken
+                        DispatchQueue.main.async(execute:
+                            {
+                                self.dispatchEvent(event: Event(type: EventType.refreshToken, target: self))
+                        })
+                    }
+                } catch RemoteError.description(let details)
+                {
+                    print ( "Error: " + details )
+                } catch
+                {
+                    print ( "Uncaught error" )
                 }
+            } else
+            {
+                DispatchQueue.main.async(execute: {
+                    self.dispatchEvent(event: Event(type: EventType.glucoseIOError, target: self))
+                })
             }
         }
     }
@@ -118,42 +168,55 @@ class DexcomBridge: EventDispatcher
             if (response.result.isSuccess)
             {
                 do {
-                    if let result: JSON = try JSON(data: response.data!) {
-                        self.bloodSamples.removeAll()
-                        if let egvs = result["egvs"].array {
-                            for item:JSON in egvs
+                    if let result: JSON = try JSON(data: response.data!)
+                    {
+                        if ( result["fault"] != JSON.null )
+                        {
+                            throw RemoteError.description ( details: result["fault"]["detail"]["errorcode"].stringValue )
+                        } else
+                        {
+                            self.bloodSamples.removeAll()
+                            if let egvs = result["egvs"].array
                             {
-                                if item["value"] != JSON.null && item["systemTime"] != JSON.null && item["trend"] != JSON.null
+                                for item:JSON in egvs
                                 {
-                                    let value = item["value"].int!
-                                    let dateTime = item["systemTime"].stringValue
-                                    let trend = item["trend"].stringValue
-                                    let date = dateTime.components(separatedBy: "T")[0]
-                                    let time = dateTime.components(separatedBy: "T")[1]
-                                    self.bloodSamples.append(GlucoseSample(pValue: value, pDate: date, pTime: time, pTrend: trend))
+                                    if item["value"] != JSON.null && item["systemTime"] != JSON.null && item["trend"] != JSON.null
+                                    {
+                                        let value = item["value"].int!
+                                        let dateTime = item["systemTime"].stringValue
+                                        let trend = item["trend"].stringValue
+                                        let date = dateTime.components(separatedBy: "T")[0]
+                                        let time = dateTime.components(separatedBy: "T")[1]
+                                        self.bloodSamples.append(GlucoseSample(pValue: value, pDate: date, pTime: time, pTrend: trend))
+                                    }
+                                }
+                        
+                                DispatchQueue.main.async(execute:
+                                    {
+                                        self.dispatchEvent(event: Event(type: EventType.glucoseValues, target: self))
+                                })
+                                
+                                if (completionHandler) != nil
+                                {
+                                    completionHandler(.newData)
                                 }
                             }
                         }
                     }
+                } catch RemoteError.description(let details)
+                {
+                    print ( "Error: " + details )
                 } catch
                 {
-                    print ("error while parsing JSON" )
+                    print ( "Uncaught error" )
                 }
-                
-                DispatchQueue.main.async(execute:
-                {
-                        self.dispatchEvent(event: Event(type: EventType.glucoseValues, target: self))
-                })
-                
-                if (completionHandler) != nil
-                {
-                    completionHandler(.newData)
-                }
-            }
-    
+            } else
+            {
                 DispatchQueue.main.async(execute: {
                     self.dispatchEvent(event: Event(type: EventType.glucoseIOError, target: self))
                 })
             }
+        }
     }
 }
+

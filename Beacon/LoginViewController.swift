@@ -25,14 +25,6 @@ class LoginViewController: UIViewController
     private var bodyFont:UIFont!
     private var titleFont: UIFont!
     
-    private let oauthswift = OAuth2Swift(
-        consumerKey:    "PufsQSdRKnVgCc8phv3CtKrg7gArPHJT",
-        consumerSecret: "sAWUZwCSmdoeWlyW",
-        authorizeUrl:   "https://sandbox-api.dexcom.com/v1/oauth2/login",
-        accessTokenUrl: "offline_access",
-        responseType:   "code"
-    )
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -90,7 +82,7 @@ class LoginViewController: UIViewController
     
     @IBAction func login(_ sender: Any)
     {
-        let handle = oauthswift.authorize(
+        let handle = DexcomBridge.shared().oauthswift.authorize(
             withCallbackURL: URL(string: "hal://oauth-callback/dexcom")!,
             scope: "offline_access", state:"dummy",
             success: { credential, response, parameters in
