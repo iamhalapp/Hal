@@ -25,23 +25,30 @@ class HealthKitBridge: EventDispatcher
     
     func getHealthKitPermission()
     {
-        // we want blood glucose levels
-        let writableTypes: Set<HKSampleType> = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodGlucose)!, HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
-        let readableTypes: Set<HKSampleType> = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodGlucose)!, HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+        let readableTypes: Set<HKSampleType> = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
         
-        // Request Authorization
-        healthKitStore.requestAuthorization(toShare: writableTypes, read: readableTypes) { (success, error) in
-            
-            if success {
-                self.isAuthorized = true
-                DispatchQueue.main.async(execute:
-                {
-                    self.dispatchEvent(event: Event(type: EventType.authorized, target: self))
-                })
-            } else {
-                self.isAuthorized = false
-                print("error authorizating HealthStore. You're propably on iPad \(String(describing: error?.localizedDescription))")
+        let writableTypes: Set<HKSampleType> = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+        
+        if ( HKHealthStore.isHealthDataAvailable() )
+        {
+        
+            // Request Authorization
+            healthKitStore.requestAuthorization(toShare: writableTypes, read: readableTypes) { (success, error) in
+                
+                if success {
+                    self.isAuthorized = true
+                    DispatchQueue.main.async(execute:
+                    {
+                        self.dispatchEvent(event: Event(type: EventType.authorized, target: self))
+                    })
+                } else {
+                    self.isAuthorized = false
+                    print("error authorizating HealthStore. You're propably on iPad \(String(describing: error?.localizedDescription))")
+                }
             }
+        } else
+        {
+            print ("HealthKit not available on this device")
         }
     }
     

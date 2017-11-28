@@ -72,7 +72,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let scheduler = DLNotificationScheduler()
         scheduler.scheduleNotification(notification: firstNotification)
  */
-        
         activityIndicator.startAnimating()
         
         range.dataSource = self;
@@ -137,7 +136,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         remoteBridge = DexcomBridge.shared()
         let glucoseValuesHandler = EventHandler(function: self.onGlucoseValues)
         let refreshedTokenHandler = EventHandler(function: self.onTokenRefreshed)
-        let onLoggedInHandler = EventHandler (function: self.onLoggedIn)
         let glucoseIOHandler = EventHandler (function: self.glucoseIOFailed)
         let hkAuthorizedHandler = EventHandler (function: self.onHKAuthorization)
         let hkHeartRateHandler = EventHandler (function: self.onHKHeartRate)
@@ -376,12 +374,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
-    public func onLoggedIn (event: Event)
-    {
-        // after login, initiate the first data pull
-        resume()
-    }
-    
     public func onTokenRefreshed (event: Event)
     {
         // once token is refreshed, resume
@@ -390,13 +382,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     public func glucoseIOFailed (event: Event)
     {
-        //pause()
+        pause()
     }
     
     public func onHKAuthorization (event: Event)
     {
         // request heart rate data from HealthKit
-        print ("get heart rate")
         hkBridge.getHeartRate()
     }
     
