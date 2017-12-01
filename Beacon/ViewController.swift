@@ -205,13 +205,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         activityIndicator.startAnimating()
         activityIndicator.alpha = 1
         if (selectedValue == "24 hours") {
-            remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-19T07:00:00", endDate: "2017-06-19T19:00:00")
+            remoteBridge.getGlucoseValues(sender: self, startDate: "2017-06-19T07:00:00", endDate: "2017-06-19T19:00:00")
         } else if (selectedValue == "48 hours") {
-            remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-18T08:00:00", endDate: "2017-06-20T08:00:00")
+            remoteBridge.getGlucoseValues(sender: self, startDate: "2017-06-18T08:00:00", endDate: "2017-06-20T08:00:00")
         } else if (selectedValue == "3 days") {
-            remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-17T08:00:00", endDate: "2017-06-20T08:00:00")
+            remoteBridge.getGlucoseValues(sender: self, startDate: "2017-06-17T08:00:00", endDate: "2017-06-20T08:00:00")
         } else if (selectedValue == "7 days") {
-            remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-13T08:00:00", endDate: "2017-06-20T08:00:00")
+            remoteBridge.getGlucoseValues(sender: self, startDate: "2017-06-13T08:00:00", endDate: "2017-06-20T08:00:00")
         }
         
         let pickerLabel: UILabel = UILabel()
@@ -402,7 +402,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @objc func update()
     {
         print("UPDATE:: Pulling latest data")
-        remoteBridge.getGlucoseValues(token: DexcomBridge.TOKEN, startDate: "2017-06-19T08:00:00", endDate: "2017-06-20T08:00:00")
+        remoteBridge.getGlucoseValues(sender: self, startDate: "2017-11-28T08:00:00", endDate: "2017-11-28T08:00:00")
         hkBridge.getHeartRate()
     }
     

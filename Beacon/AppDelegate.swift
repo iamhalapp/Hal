@@ -37,8 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url:URL = url.absoluteURL
         let parameters: Dictionary = Utils.decomposeURL(url: url)
         let code: String = parameters["code"]!
-        // we store the code
-        keyChain.set(code, forKey: "code")
         // authenticate to the Dexcom APIs using the authorization code
         dxBridge.getToken(code: code)
         return true

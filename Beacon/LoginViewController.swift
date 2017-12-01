@@ -20,7 +20,7 @@ class LoginViewController: UIViewController
     public var dxBridge: DexcomBridge!
     private var loggedIn: EventHandler!
     private var setupBg: LoginBackground!
-    private var keychain:KeychainSwift!
+    private var keyChain: KeychainSwift!
     private var logo: UIImage!
     private var bodyFont:UIFont!
     private var titleFont: UIFont!
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController
         loginButton.layer.cornerRadius = 5
         
         // load the keychain
-        keychain = KeychainSwift.shared()
+        keyChain = KeychainSwift.shared()
         
         // background handling
         setupBg = LoginBackground (parent: self)
@@ -59,20 +59,27 @@ class LoginViewController: UIViewController
         // auth login
         dxBridge = DexcomBridge.shared()
         let onTokenReceivedHandler = EventHandler(function: self.onTokenReceived)
+        let onTokenRefreshedReceivedHandler = EventHandler(function: self.onTokenRefreshedReceived)
         dxBridge.addEventListener(type: EventType.token, handler: onTokenReceivedHandler)
+        dxBridge.addEventListener(type: EventType.refreshToken, handler: onTokenRefreshedReceivedHandler)
         
         // password management
-        let code = keychain.get("code")
+        let refreshToken = keyChain.get("refreshToken")
         
-        if code != nil
+        if refreshToken != nil
         {
-            dxBridge.getToken(code: code!)
+            dxBridge.refreshToken()
         }
     }
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    
+    public func onTokenRefreshedReceived(event: Event)
+    {
+        self.performSegue(withIdentifier: "Main", sender: self)
     }
     
     public func onTokenReceived(event: Event)

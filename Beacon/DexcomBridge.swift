@@ -15,12 +15,8 @@ import OAuthSwift
 
 class DexcomBridge: EventDispatcher
 {
-    public static var TOKEN: String!
-    public static var REFRESHED_TOKEN: String!
-    
     private static let CONSUMER_KEY: String = "sFW420cYM1CukL3ogpmHyB61m06c5Qb5"
     private static let CONSUMER_SECRET: String = "CL0QpJq42XhNAsok"
-    
     private static var TOKEN_URL: String = "https://api.dexcom.com/v1/oauth2/token"
     private static var GLUCOSE_URL: String = "https://api.dexcom.com/v1/users/self/egvs"
     private static let AUTHORIZE_URL:String = "https://api.dexcom.com/v1/oauth2/login"
@@ -35,6 +31,7 @@ class DexcomBridge: EventDispatcher
     }
     
     public var bloodSamples: [GlucoseSample] = []
+    public var keyChain: KeychainSwift = KeychainSwift.shared()
     private var dataTask: URLSessionDataTask?
     
     private let headers: HTTPHeaders = [
@@ -84,10 +81,10 @@ class DexcomBridge: EventDispatcher
                         throw RemoteError.description ( details: result["fault"]["detail"]["errorcode"].stringValue )
                     } else
                     {
-                        let token: String = result["access_token"].stringValue
+                        let acccesToken: String = result["access_token"].stringValue
                         let refreshToken: String = result["refresh_token"].stringValue
-                        DexcomBridge.TOKEN = token
-                        DexcomBridge.REFRESHED_TOKEN = refreshToken
+                        self.keyChain.set(acccesToken, forKey: "accessToken")
+                        self.keyChain.set(refreshToken, forKey: "refreshToken")
                         DispatchQueue.main.async(execute:
                         {
                                 self.dispatchEvent(event: Event(type: EventType.token, target: self))
@@ -110,12 +107,12 @@ class DexcomBridge: EventDispatcher
     }
     
     // authenticates the user to the dexcom REST APIs
-    public func refreshToken(refreshedToken: String = DexcomBridge.REFRESHED_TOKEN)
+    public func refreshToken()
     {
         let parameters: Parameters = [
             "client_secret": DexcomBridge.CONSUMER_SECRET,
             "client_id": DexcomBridge.CONSUMER_KEY,
-            "refresh_token": refreshedToken,
+            "refresh_token": keyChain.get("refreshToken")!,
             "grant_type": DexcomBridge.REFRESH_TOKEN,
             "redirect_uri": DexcomBridge.REDIRECT_URI
         ]
@@ -126,15 +123,16 @@ class DexcomBridge: EventDispatcher
             {
                 do {
                     let result: JSON = try JSON(data: response.data!)
+                    print( result )
                     if ( result["fault"] != JSON.null )
                     {
                         throw RemoteError.description ( details: result["fault"]["detail"]["errorcode"].stringValue )
                     } else
                     {
-                        let token: String = result["access_token"].stringValue
+                        let acccesToken: String = result["access_token"].stringValue
                         let refreshToken: String = result["refresh_token"].stringValue
-                        DexcomBridge.TOKEN = token
-                        DexcomBridge.REFRESHED_TOKEN = refreshToken
+                        self.keyChain.set(acccesToken, forKey: "accessToken")
+                        self.keyChain.set(refreshToken, forKey: "refreshToken")
                         DispatchQueue.main.async(execute:
                             {
                                 self.dispatchEvent(event: Event(type: EventType.refreshToken, target: self))
@@ -157,10 +155,10 @@ class DexcomBridge: EventDispatcher
     }
     
     // retrieves the user last 24 hours glucose levels
-    public func getGlucoseValues (token: String = DexcomBridge.TOKEN, startDate: String, endDate: String, completionHandler: ((UIBackgroundFetchResult) -> Void)! = nil)
+    public func getGlucoseValues (sender: AnyObject, startDate: String, endDate: String, completionHandler: ((UIBackgroundFetchResult) -> Void)! = nil)
     {
         let headers: HTTPHeaders = [
-            "authorization": "Bearer " + DexcomBridge.TOKEN
+            "authorization": "Bearer " + keyChain.get("accessToken")!
         ]
 
         Alamofire.request(DexcomBridge.GLUCOSE_URL+"?startDate="+startDate+"&endDate="+endDate, method: .get, headers: headers).responseJSON { response in
